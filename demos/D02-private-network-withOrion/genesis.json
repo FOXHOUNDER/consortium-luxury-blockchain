@@ -1,6 +1,6 @@
 {
   "config":{
-    "chainId":1981,
+    "chainId":2018,
     "constantinoplefixblock": 0,
     "clique":{
       "blockperiodseconds":15,
