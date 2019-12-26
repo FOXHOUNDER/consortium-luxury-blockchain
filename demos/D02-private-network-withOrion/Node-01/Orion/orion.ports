@@ -1,0 +1,4 @@
+#This file contains the ports used by the running instance of Pantheon. This file will be deleted after the node is shutdown.
+#Thu Dec 26 14:22:14 CET 2019
+http-client-port=8889
+http-node-port=8081
