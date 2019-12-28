@@ -1,4 +1,5 @@
 demos/*/*/data/database/*
 demos/*/*/Orion/routerdb/*
+demos/D03*/*
 consortiumBlockchain/*/data/database/*
 consortiumBlockchain/*/Orion/routerdb/*
