@@ -5,4 +5,4 @@ demos/D03*
 
 consortiumBlockchain/*/data/database/*
 consortiumBlockchain/*/Orion/routerdb/*
-consortiumBlockchain/web3js-eea-r/node_modules/*
+consortiumBlockchain/web3js-eea/node_modules/*
