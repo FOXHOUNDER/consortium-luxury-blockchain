@@ -3,7 +3,7 @@
     "chainId":2020,
     "constantinoplefixblock": 0,
     "clique":{
-      "blockperiodseconds":15,
+      "blockperiodseconds":30,
       "epochlength":30000
     }
   },
@@ -15,7 +15,7 @@
   "contractSizeLimit": 2147483647,
   "mixHash":"0x0000000000000000000000000000000000000000000000000000000000000000",
   "nonce":"0x0",
-  "timestamp":"0x5c51a607",
+  "timestamp":"0x0",
   "alloc": {
       "fe3b557e8fb62b89f4916b721be55ceb828dbd73": {
         "privateKey": "8f2a55949038a9610f50fb23b5883af3b4ecb3c3bb792cbcefbd1542c692be63",
