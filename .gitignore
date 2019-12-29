@@ -1,6 +1,6 @@
 demos/*/*/data/database/*
 demos/*/*/Orion/routerdb/*
 demos/D02-private-network-withOrion/web3js-eea/node_modules/*
-demos/D03*/*
+
 consortiumBlockchain/*/data/database/*
 consortiumBlockchain/*/Orion/routerdb/*
