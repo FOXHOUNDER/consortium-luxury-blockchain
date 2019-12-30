@@ -29,6 +29,8 @@ rpc-http-enabled=true
 rpc-http-port="8545"
 rpc-http-api=['ETH','NET','CLIQUE','PERM','EEA','PRIV']
 rpc-http-cors-origins=["all"]
+rpc-ws-enabled=true
+rpc-ws-port=9545
 host-whitelist=["*"]                # Comma-separated list of hostnames to allow access to the JSON-RPC API.
 
 # PERMISSION + PRIVACY SETTINGS ----------------------------------------------------------------- #
@@ -40,10 +42,9 @@ privacy-enabled=true
 privacy-url="http://127.0.0.1:8888"
 privacy-public-key-file="Orion/key.pub"
 
-
 # ADDITIONAL SETTINGS --------------------------------------------------------------------------- #
 # ----------------------------------------------------------------------------------------------- #
-identity="BRO00-LVMH"               # Name for the node for some Ethereum network explorers.
+identity="LVMH-00"                  # Name for the node for some Ethereum network explorers.
 logging="INFO"                      # Log levels are OFF, FATAL, ERROR, WARN, INFO, DEBUG, TRACE, ALL
-metrics-enabled=true                # Set to true to enable the metrics exporter (Prometheus in polling)
-metrics-port="9545"
+# metrics-enabled=true              # Set to true to enable the metrics exporter (Prometheus in polling) -> not using it anymore, ethstats is enough
+# metrics-port="9545"
