@@ -1,0 +1,58 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+    - image: circleci/node:9
+    working_directory: ~/repo
+    steps:
+    - checkout
+    - run:
+        name: Install Node Modules
+        command: npm install
+    - run:
+        name: Gulp Lint
+        command: npm run gulp lint
+    - run:
+        name: Gulp Build
+        command: npm run gulp prepare
+
+  trigger-docker-hub:
+    docker:
+    - image: circleci/node:9
+    working_directory: ~/repo
+    steps:
+    - checkout
+    - run:
+        name: Trigger DockerHub
+        command: ./triggerDockerHub.sh
+
+  publishHelmChart:
+    docker:
+    - image: valercara/helm-alpine:latest
+    working_directory: ~/repo
+    steps:
+    - checkout
+    - run:
+      name: Publish helm charts
+      command: ./k8s/charts/publish
+
+workflows:
+  version: 2
+  deploy:
+    jobs:
+      - build:
+          filters:
+            tags:
+              only: /.*/
+      - trigger-docker-hub:
+          requires:
+            - build
+          filters:
+            tags:
+              only:
+                - latest
+                - /^v[0-9.]+$/
+            branches:
+              only:
+                - master
