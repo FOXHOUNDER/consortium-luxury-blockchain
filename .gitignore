@@ -6,3 +6,4 @@ demos/D03*
 consortiumBlockchain/*/data/database/*
 consortiumBlockchain/*/Orion/routerdb/*
 consortiumBlockchain/web3js-eea/node_modules/*
+consortiumBlockchain/*/data/besu.ports
