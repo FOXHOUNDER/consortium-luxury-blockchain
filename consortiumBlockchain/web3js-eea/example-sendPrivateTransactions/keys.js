@@ -1,30 +1,30 @@
 module.exports = {
   orion: {
     node1: {
-      publicKey: "A1aVtMxLCUHmBVHXoZzzBgPbW/wj5axDpW9X8l91SGo="
+      publicKey: "2UJOI8loTOtqNephHnP+PsAck3Dia0v0DylOafwVkRM="
     },
     node2: {
-      publicKey: "Ko2bVqD+nNlNYL5EE7y3IdOnviftjiizpjRt+HTuFBs="
+      publicKey: "fMllutpuOpZVscV+rQFiCkX7rQ9CAjKeSXjmNiS+qww="
     },
     node3: {
-      publicKey: "k2zXEin4Ip/qBGlRkJejnGWdP9cjkK+DAvKNW31L2C8="
+      publicKey: "Ek2spy80VmWBspLRGFn6VLLyqRlGrdqKTlIxK1iZhTo="
     }
   },
   besu: {
     node1: {
-      url: "http://localhost:20000",
+      url: "http://127.0.0.1:8545",
       privateKey:
-        "8f2a55949038a9610f50fb23b5883af3b4ecb3c3bb792cbcefbd1542c692be63"
+        "ef773e2fe6654062e5179b18c528d1e81c8f8aa20126cfbcd44bf422f59232a5"
     },
     node2: {
-      url: "http://localhost:20002",
+      url: "http://127.0.0.1:8546",
       privateKey:
-        "c87509a1c067bbde78beb793e6fa76530b6382a4c0241e5e4a9ec0a0f44dc0d3"
+        "46742c7235e7e94bc3542db4e12e36f8859bac767a84eb8be5804e6bdb55c242"
     },
     node3: {
-      url: "http://localhost:20004",
+      url: "http://127.0.0.1:8547",
       privateKey:
-        "ae6ae8e5ccbfb04590405997ee2d52d2b330726137b875053c36d94e974d162f"
+        "e1494e84fc9d526d663c5e81faa318b5f453a0251180e41550aac1225f9f46d3"
     }
   }
 };
