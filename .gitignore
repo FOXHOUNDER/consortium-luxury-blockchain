@@ -1,9 +1,11 @@
 demos/*/*/data/database/*
 demos/*/*/Orion/routerdb/*
+demos/*/*/Orion/orion.ports
 demos/D02-private-network-withOrion/web3js-eea/node_modules/*
 demos/D03*
 
-consortiumBlockchain/*/data/database/*
-consortiumBlockchain/*/Orion/routerdb/*
-consortiumBlockchain/web3js-eea/node_modules/*
-consortiumBlockchain/*/data/besu.ports
+consortium-network/*/data/database/*
+consortium-network/*/Orion/routerdb/*
+consortium-network/*/Orion/orion.ports
+consortium-network/web3js-eea/node_modules/*
+consortium-network/*/data/besu.ports
