@@ -9,7 +9,7 @@ const CrossContractReader = require("../solidity/CrossContractReader/CrossContra
 const { orion, pantheon } = require("../keys.js");
 
 const storeValueFromNode1 = (address, value) => {
-  const web3 = new EEAClient(new Web3(pantheon.node1.url), 2018);
+  const web3 = new EEAClient(new Web3(pantheon.node1.url), 2020);
   const contract = new web3.eth.Contract(EventEmitter);
 
   // eslint-disable-next-line no-underscore-dangl
