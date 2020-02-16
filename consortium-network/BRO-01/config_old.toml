@@ -1,0 +1,21 @@
+data-path="data"                    # The path to the Besu data directory. 
+genesis-file="../genesis.json"      # Genesis file is used to create a custom network.
+p2p-port="30304"
+bootnodes=["enode://6d3ecbcded1ccb97c4e9b569929a7df92fe3dec4b8296f93f5db1b82c4e9088913d903ac5c134587fd47adfa32803eac108c242d63f2a97490e6a59cfeb93a76@127.0.0.1:30303"]
+
+rpc-http-enabled=true
+rpc-http-port="8546"
+rpc-http-api=['ETH','NET','CLIQUE','PERM','EEA','PRIV']
+rpc-http-cors-origins=["all"]
+
+host-whitelist=["*"]
+
+permissions-nodes-config-file-enabled=true
+permissions-accounts-config-file-enabled=true
+
+privacy-enabled=true
+privacy-url="http://127.0.0.1:8889"
+privacy-public-key-file="Orion/key.pub"
+
+min-gas-price=0
+
