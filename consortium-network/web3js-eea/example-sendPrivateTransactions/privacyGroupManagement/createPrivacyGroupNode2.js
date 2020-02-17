@@ -2,7 +2,7 @@ const Web3 = require("web3");
 const EEAClient = require("../../src");
 const { orion, besu } = require("../keys.js");
 
-const web3 = new EEAClient(new Web3(besu.node2.url), 2018);
+const web3 = new EEAClient(new Web3(besu.node2.url), 2020);
 
 const createPrivacyGroupForNode23 = () => {
   const contractOptions = {

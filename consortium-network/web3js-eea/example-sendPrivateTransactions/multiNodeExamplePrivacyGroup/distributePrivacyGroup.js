@@ -13,8 +13,8 @@ const binary = fs.readFileSync(
   path.join(__dirname, "../solidity/EventEmitter/EventEmitter.bin")
 );
 
-const web3 = new EEAClient(new Web3(pantheon.node1.url), 2018);
-const web3Node2 = new EEAClient(new Web3(pantheon.node2.url), 2018);
+const web3 = new EEAClient(new Web3(pantheon.node1.url), 2020);
+const web3Node2 = new EEAClient(new Web3(pantheon.node2.url), 2020);
 
 const createGroupId = () => {
   return createGroup.createPrivacyGroup();

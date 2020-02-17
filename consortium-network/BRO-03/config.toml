@@ -39,7 +39,7 @@ host-whitelist=["*"]                # Comma-separated list of hostnames to allow
 permissions-nodes-config-file-enabled=true
 permissions-accounts-config-file-enabled=false
 privacy-enabled=true
-privacy-url="http://127.0.0.1:8891"
+privacy-url="http://127.0.0.1:8893"
 privacy-public-key-file="Orion/key.pub"
 
 
