@@ -4,8 +4,12 @@ demos/*/*/Orion/orion.ports
 demos/D02-private-network-withOrion/web3js-eea/node_modules/*
 demos/D03*
 
-consortium-network/*/data/database/*
-consortium-network/*/Orion/routerdb/*
-consortium-network/*/Orion/orion.ports
-consortium-network/web3js-eea/node_modules/*
-consortium-network/*/data/besu.ports
+consortium-network/ledger/participants/*/data/database/*
+consortium-network/ledger/participants/*/data/uploads/*
+consortium-network/ledger/participants/*/data/besu.ports
+consortium-network/ledger/participants/*/data/DATABASE_METADATA.json
+
+consortium-network/ledger/participants/*/Orion/routerdb/*
+consortium-network/ledger/participants/*/Orion/orion.ports
+
+consortium-network/ledger/web3js-eea/node_modules/*
