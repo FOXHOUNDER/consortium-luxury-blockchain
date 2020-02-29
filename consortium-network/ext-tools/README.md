@@ -1,7 +1,7 @@
 Run alethio-start.sh to launch
- . Block Explorer
- . Ethstats Server
- . 1 Ethstats Client for each BR0-0X
+ . Block Explorer (http://localhost:9191/)
+ . Ethstats Server (http://localhost:80/)
+ .. + 1 Ethstats Client for each BR0-0X
 
 Run alethio-stop.sh to stop them all and clean docker resources
 
