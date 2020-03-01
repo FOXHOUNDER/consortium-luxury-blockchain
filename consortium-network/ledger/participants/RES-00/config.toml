@@ -38,9 +38,9 @@ host-whitelist=["*"]                # Comma-separated list of hostnames to allow
 #permissions-accounts-config-file="path"        # Unnecessary. Defaults to permissions_config.toml in the data directory.
 permissions-nodes-config-file-enabled=false
 permissions-accounts-config-file-enabled=false
-privacy-enabled=true
-privacy-url="http://127.0.0.1:8896"
-privacy-public-key-file="Orion/key.pub"
+privacy-enabled=false
+# privacy-url="http://127.0.0.1:8896"
+# privacy-public-key-file="Orion/key.pub"
 
 
 # ADDITIONAL SETTINGS --------------------------------------------------------------------------- #
