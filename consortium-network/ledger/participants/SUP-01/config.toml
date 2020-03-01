@@ -45,7 +45,7 @@ privacy-public-key-file="Orion/key.pub"
 
 # ADDITIONAL SETTINGS --------------------------------------------------------------------------- #
 # ----------------------------------------------------------------------------------------------- #
-identity="GUCCI-PRL-00"             # Name for the node for some Ethereum network explorers.
+identity="GUCCI-SUP-01"             # Name for the node for some Ethereum network explorers.
 logging="INFO"                      # Log levels are OFF, FATAL, ERROR, WARN, INFO, DEBUG, TRACE, ALL
 # metrics-enabled=true              # Set to true to enable the metrics exporter (Prometheus in polling) -> not using it anymore, ethstats is enough
 # metrics-port="9548"
