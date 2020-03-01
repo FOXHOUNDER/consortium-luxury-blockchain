@@ -10,6 +10,8 @@ docker run -d --rm --name ethstats-client-br00 --net host alethio/ethstats-cli -
 docker run -d --rm --name ethstats-client-br01 --net host alethio/ethstats-cli --register --account-email gucci@unimib.it --node-name GUCCI-00 --server-url http://localhost:3000 --client-url ws://127.0.0.1:9546
 docker run -d --rm --name ethstats-client-br02 --net host alethio/ethstats-cli --register --account-email prada@unimib.it --node-name PRADA-00 --server-url http://localhost:3000 --client-url ws://127.0.0.1:9547
 docker run -d --rm --name ethstats-client-br03 --net host alethio/ethstats-cli --register --account-email armani@unimib.it --node-name ARMANI-00 --server-url http://localhost:3000 --client-url ws://127.0.0.1:9548
+docker run -d --rm --name ethstats-client-prl00 --net host alethio/ethstats-cli --register --account-email lvmh-prl@unimib.it --node-name LVMH-PRL-00 --server-url http://localhost:3000 --client-url ws://127.0.0.1:9549
+docker run -d --rm --name ethstats-client-cagXX --net host alethio/ethstats-cli --register --account-email cagency@unimib.it --node-name CAG-XX --server-url http://localhost:3000 --client-url ws://127.0.0.1:9553
 
 echo "PROCEDURE COMPLETED, here's the list"
 docker container ls
