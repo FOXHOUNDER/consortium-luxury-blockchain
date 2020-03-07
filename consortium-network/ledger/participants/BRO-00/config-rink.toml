@@ -1,0 +1,11 @@
+# FULL DOC https://besu.hyperledger.org/en/stable/Reference/CLI/CLI-Syntax/ --------------------- #
+
+# ----------------------------------------------------------------------------------------------- #
+# NETWORK SETTINGS ------------------------------------------------------------------------------ #
+data-path="data"                    # The path to the Besu data directory. 
+network-id=10
+#network="rinkeby"                 # Uncomment to use Rinkeby which is a PoA test network w Clique (must comment genesis-file obv).
+# node-private-key-file="path"      # Unnecessary. Defaults to the key file in the data directory.
+
+
+
