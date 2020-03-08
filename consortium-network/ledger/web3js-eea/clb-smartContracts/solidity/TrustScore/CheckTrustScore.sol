@@ -1,9 +1,9 @@
 pragma solidity ^0.5.0;
 
-import "./UpdateTrustScore.sol";
+import "./TrustScoresCollection.sol";
 
-contract CheckTrustscore {
-    function get(address _ts, uint _id) public view returns (uint) {
-    return UpdateTrustScore(_ts).getTS(_id);
+contract CheckTrustscoreExample {
+    function get(address _contract, address _par) public view returns (uint) {
+    return TrustScoresCollection(_contract).getCurrentScore(_par);
     }
 }
