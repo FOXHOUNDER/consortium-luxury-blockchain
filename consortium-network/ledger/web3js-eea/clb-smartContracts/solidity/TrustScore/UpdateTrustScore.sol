@@ -1,61 +1,64 @@
 pragma solidity ^0.5.0;
 
-contract UpdateTrustScore {
+contract TrustScoresCollection {
     uint public tsCount = 0;
-    address private owner;
+    address private contractOwner;
 
-    constructor() public { owner = msg.sender; }
+    constructor() public { contractOwner = msg.sender; }
 
-    modifier onlyOwner() {
+    modifier onlyContractOwner() {
         require(
-            msg.sender == owner,
+            msg.sender == contractOwner,
             "Only the Control Agency can perform this operation."
         );
         _;
     }
 
     struct TrustScore {
-        uint id;
-        uint score;
-        address from_par;
-        address to_par;
-        string reason;
-    } mapping(uint => TrustScore) public trustscores;
+        address participant;
+        uint currentScore;
+        uint[] allScores;
+        string latestReport;
+        uint scoresCount;
+    } mapping(address => TrustScore) private trustscores;
 
-    function createTS(address _par) public onlyOwner {
+    function create(address _par)
+    public onlyContractOwner {
         tsCount ++;
-        trustscores[tsCount] = TrustScore(tsCount, 50, owner, _par, "initialization");
-        emit TSCreated(tsCount, 50, owner, _par, "initialization");
+        TrustScore memory _trustscore;
+        uint[] memory _scores = new uint[](1);
+        _scores[0] = 50;
+        _trustscore.participant = _par;
+        _trustscore.currentScore = 50;
+        _trustscore.allScores = _scores;
+        _trustscore.latestReport = "Initialization";
+        _trustscore.scoresCount = 1;
+        emit GenerateNewTrustScore(_par, 50);
     }
 
-
-    function updateTS(uint _id, address _par, string memory _reason, uint _score) public onlyOwner {
-        TrustScore memory _trustscore = trustscores[_id];
-        _trustscore.score = _score;
-        _trustscore.reason = _reason;
-        _trustscore.from_par = owner;
-        _trustscore.to_par = _par;
-        trustscores[_id] = _trustscore;
-        emit TSUpdated(_id, _score, _par, _reason);
+    function update(address _par, string memory _report, uint _score)
+    public onlyContractOwner {
+        TrustScore memory _trustscore = trustscores[_par];
+        uint newScoresCount = trustscores[_par].scoresCount + 1;
+        uint[] memory _allScores = new uint[](newScoresCount);
+        
+        _trustscore.currentScore = _score;
+        for(uint i=0;i<newScoresCount-1;i++)
+            _allScores[i] = trustscores[_par].allScores[i];
+        _allScores[newScoresCount-1] = _score;
+        _trustscore.allScores = _allScores;
+        _trustscore.latestReport = _report;
+        _trustscore.scoresCount = newScoresCount;
+        trustscores[_par] = _trustscore;
+        emit UpdateTrustScore(_par, _score, _report);
     }
 
-    function getTS(uint _id) public view returns (uint) {
-        return trustscores[_id].score;
+    function getCurrentScore(address _par)
+    public view returns (uint) {
+        return trustscores[_par].currentScore;
     }
 
-    event TSCreated (
-        uint id,
-        uint score,
-        address from_par,
-        address to_par,
-        string reason
-    );
-
-    event TSUpdated (
-        uint id,
-        uint score,
-        address to_par,
-        string reason
-    );
+    event GenerateNewTrustScore (address participant, uint currentScore);
+    event UpdateTrustScore (address participant, uint currentScore, string report);
 
 }
