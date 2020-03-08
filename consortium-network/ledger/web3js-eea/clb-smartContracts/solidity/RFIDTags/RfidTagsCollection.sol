@@ -54,10 +54,15 @@ contract RfidTagsCollection {
     emit MarkTagInvalid(_uuid, _rft.isValid);
   }
   
-  function getOwners (string memory _uuid) 
+  function getOwnersViaEvent (string memory _uuid) 
   public {
     for(uint i=0; i<rfts[_uuid].owners.length;i++)
       emit LogOwnersHistory(rfts[_uuid].uuid, rfts[_uuid].owners[i]);
+  }
+
+  function getOwners (string memory _uuid) 
+  public view returns (address[] memory) {
+    return rfts[_uuid].owners;
   }
 
   event GenerateNewTag(address contractOwner, string uuid, address brand, bool isValid);
