@@ -1,7 +1,7 @@
 pragma solidity ^0.5.0;
 
 contract RfidTagsCollection {
-  uint public count = 0;
+  uint public tagCount = 0;
   address private contractOwner;
 
   constructor() public { contractOwner = msg.sender; }
@@ -32,7 +32,7 @@ contract RfidTagsCollection {
 
   function create(string memory _uuid, address _brand)
   public onlyContractOwner {
-    count++;
+    tagCount++;
     RFT memory _rft;
     address[] memory _owners = new address[](2);
     _owners[0] = contractOwner;
