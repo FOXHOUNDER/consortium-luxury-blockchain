@@ -7,6 +7,7 @@ library SharedObjectsLibrary {
     uint exchanges;
     address brand;
     address[] owners;
+    address currentOwner;
     bool isValid;
   } 
 

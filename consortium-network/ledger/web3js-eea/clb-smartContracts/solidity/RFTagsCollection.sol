@@ -37,6 +37,7 @@ contract RFTagsCollection {
     _rft.exchanges = 0;
     _rft.brand = _brand;
     _rft.owners = _owners;
+    _rft.currentOwner = _brand;
     _rft.isValid = true;
     rfts[_uuid] = _rft;
     emit GenerateNewTag(contractOwner, _uuid, _brand, true);
@@ -59,6 +60,11 @@ contract RFTagsCollection {
   function getOwners (string memory _uuid) 
   public view returns (address[] memory) {
     return rfts[_uuid].owners;
+  }
+  
+  function getCurrentOwner (string memory _uuid) 
+  public view returns (address) {
+    return rfts[_uuid].currentOwner;
   }
 
   event GenerateNewTag(address contractOwner, string uuid, address brand, bool isValid);
