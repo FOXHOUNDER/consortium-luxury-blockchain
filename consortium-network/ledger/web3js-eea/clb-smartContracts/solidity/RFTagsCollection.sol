@@ -1,6 +1,8 @@
 pragma solidity ^0.5.0;
 
-contract RfidTagsCollection {
+import "./SharedObjectsLibrary.sol";
+
+contract RFTagsCollection {
   uint public tagCount = 0;
   address private contractOwner;
 
@@ -22,18 +24,12 @@ contract RfidTagsCollection {
     _;
   }
 
-  struct RFT {
-    string uuid;
-    uint exchanges;
-    address brand;
-    address[] owners;
-    bool isValid;
-  } mapping(string => RFT) private rfts;
+  mapping(string => SharedObjectsLibrary.RFT) private rfts;
 
   function create(string memory _uuid, address _brand)
   public onlyContractOwner {
     tagCount++;
-    RFT memory _rft;
+    SharedObjectsLibrary.RFT memory _rft;
     address[] memory _owners = new address[](2);
     _owners[0] = contractOwner;
     _owners[1] = _brand;
@@ -48,7 +44,7 @@ contract RfidTagsCollection {
 
   function invalidate(string memory _uuid, address _brand)
   public onlyBrand(_brand) {
-    RFT memory _rft = rfts[_uuid];
+    SharedObjectsLibrary.RFT memory _rft = rfts[_uuid];
     _rft.isValid = !_rft.isValid;
     rfts[_uuid] = _rft;
     emit MarkTagInvalid(_uuid, _rft.isValid);
