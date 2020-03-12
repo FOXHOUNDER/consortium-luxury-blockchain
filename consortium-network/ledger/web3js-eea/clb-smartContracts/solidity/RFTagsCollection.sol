@@ -34,7 +34,7 @@ contract RFTagsCollection {
     _owners[0] = contractOwner;
     _owners[1] = _brand;
     _rft.uuid = _uuid;
-    _rft.exchanges = 0;
+    _rft.exchanges = 1;
     _rft.brand = _brand;
     _rft.owners = _owners;
     _rft.currentOwner = _brand;
@@ -49,6 +49,22 @@ contract RFTagsCollection {
     _rft.isValid = !_rft.isValid;
     rfts[_uuid] = _rft;
     emit MarkTagInvalid(_uuid, _rft.isValid);
+  }
+  
+  function updateOwner(string calldata _uuid, address _newOwner)
+  external {
+    SharedObjectsLibrary.RFT memory _rft = rfts[_uuid];
+    
+    uint newOwnersCount = _rft.owners.length+1;
+    address[] memory _owners = new address[](newOwnersCount);
+    
+    for(uint i=0;i<newOwnersCount-1;i++)
+      _owners[i] = _rft.owners[i];
+    _owners[newOwnersCount-1] = _newOwner;
+    
+    _rft.currentOwner = _newOwner;
+    _rft.exchanges = _rft.exchanges+1;
+    rfts[_uuid] = _rft;
   }
   
   function getOwnersViaEvent (string memory _uuid) 
