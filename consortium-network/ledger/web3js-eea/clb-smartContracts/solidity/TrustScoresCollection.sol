@@ -41,12 +41,12 @@ contract TrustScoresCollection {
   public onlyContractOwner {
     tsCount++;
     TrustScore memory _trustscore = trustscores[_par];
-    uint newScoresCount = trustscores[_par].scoresCount + 1;
+    uint newScoresCount = _trustscore.scoresCount + 1;
     uint[] memory _allScores = new uint[](newScoresCount);
     _trustscore.currentScore = _score;
     
     for(uint i=0;i<newScoresCount-1;i++)
-      _allScores[i] = trustscores[_par].allScores[i];
+      _allScores[i] = _trustscore.allScores[i];
     _allScores[newScoresCount-1] = _score;
     
     _trustscore.allScores = _allScores;
