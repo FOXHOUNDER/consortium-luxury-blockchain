@@ -37,11 +37,27 @@ contract ExchangeRFT {
           _exchanges.set = _set;
           _exchanges.status = "SENT";
           exchanges[exCount] = _exchanges;
-          rftContract.updateOwner(_set[0], _to);
+          //rftContract.updateOwner(_set[0], _to);
         }
     }
     return exCount;
   }
+
+  function closeTransfer(uint _transferId, string[] memory _set) 
+  public {
+    bool exists=false;
+    for(uint i=0; i<exchanges[_transferId].set.length; i++) {
+      exists=false;
+      for(uint j=0; j<_set.length; j++)
+        if(keccak256(abi.encodePacked(_set[j])) == keccak256(abi.encodePacked(exchanges[_transferId].set[i]))) {
+          exists = true;
+          emit WarningRFT(msg.sender, exchanges[_transferId].from, _transferId, _set[j], "The RFT has been received"); }
+      if(!exists)
+        emit WarningRFT(msg.sender, exchanges[_transferId].from, _transferId, exchanges[_transferId].set[i], "The RFT seems lost");
+    } 
+  }
+  
+  event WarningRFT(address receiver, address sender, uint transferId, string uuid, string message);
   
 
   
