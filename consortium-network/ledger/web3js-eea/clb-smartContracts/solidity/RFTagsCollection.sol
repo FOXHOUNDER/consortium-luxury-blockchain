@@ -62,6 +62,7 @@ contract RFTagsCollection {
       _owners[i] = _rft.owners[i];
     _owners[newOwnersCount-1] = _newOwner;
     
+    _rft.owners =_owners;
     _rft.currentOwner = _newOwner;
     _rft.exchanges = _rft.exchanges+1;
     rfts[_uuid] = _rft;
